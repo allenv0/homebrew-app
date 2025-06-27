@@ -1,1 +1,17 @@
-url "https://www.airposture.pro/mac/AirPosture-0.1.dmg"
+cask "airposture" do
+  version "0.1"
+  sha256 "40e27c0d36c7236e95e0652bd53a9070cbe56c9e94178d795418c9005d383cc8"
+
+  url "https://www.airposture.pro/mac/AirPosture-#{version}.dmg"
+  name "AirPosture"
+  desc "Posture coach for macOS using AirPods"
+  homepage "https://www.airposture.pro"
+
+  app "AirPosture.app"
+
+  zap trash: [
+    "~/Library/Preferences/pro.airposture.plist",
+    "~/Library/Application Support/AirPosture",
+    "~/Library/Logs/AirPosture",
+  ]
+end
